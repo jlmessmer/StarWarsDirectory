@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http' 
-import { MatCardModule, MatButtonModule } from '@angular/material'
+import { MatCardModule, MatButtonModule, MatListModule, MatGridListModule, MatToolbarModule } from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
@@ -21,7 +21,10 @@ import { MessagesComponent } from './messages/messages.component';
     FormsModule,
     HttpClientModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatGridListModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
