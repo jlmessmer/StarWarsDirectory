@@ -1,9 +1,19 @@
 <div *ngIf="character">
-    <h2>{{ character.name | uppercase }} Details</h2>
-    <div>
-      <p>name: {{character.name}}</p>
-      <p>gender: {{character.gender}}</p>
-      <p>mass: {{character.mass}}</p>
-      <p>homeworld: {{character.homeworld}}</p>
-    </div>    
+    <mat-card class="character-card">
+      <mat-card-header>
+        <div mat-card-avatar class="character-header-image"></div>
+        <mat-card-title>{{character.name}}</mat-card-title>
+        <mat-card-subtitle>{{character.homeworld}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://placehold.it/400x400" alt="Photo">
+      <mat-card-content>
+        <p>Gender: {{character.gender}}</p>
+        <p>Mass: {{character.mass}}</p>
+        <p>Homeworld: {{character.homeworld}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">MORE INFO</button>
+      </mat-card-actions>
+    </mat-card>
+      
 </div>

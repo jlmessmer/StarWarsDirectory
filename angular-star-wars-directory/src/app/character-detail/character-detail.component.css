@@ -1,0 +1,8 @@
+.character-card {
+    max-width: 400px;
+  }
+  
+  .character-header-image {
+    background-image: url('https://www.placehold.it/400x400');
+    background-size: cover;
+  }

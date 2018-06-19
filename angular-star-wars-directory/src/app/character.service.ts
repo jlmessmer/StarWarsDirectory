@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, of } from 'rxjs'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { Character } from './character';
-import { CHARACTERS } from './mock-characters';
 import { MessageService } from './message.service';
 
 @Injectable({
