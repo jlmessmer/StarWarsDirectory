@@ -1,7 +1,15 @@
 <h2>Cast of Characters</h2>
-<ul class="characters">
-  <li *ngFor="let character of characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
-    {{character.name}}
-  </li>
-</ul>
-<app-character-detail [character]="selectedCharacter"></app-character-detail>
+  <mat-grid-list cols="3" rowHeight="3:4">
+    <mat-grid-tile 
+      *ngFor="let character of characters"
+      [colspan]=1
+      [rowspan]=1>
+      <app-character-detail [character]="character"></app-character-detail>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <!-- <mat-nav-list class="characters">
+    <mat-list-item *ngFor="let character of characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
+      {{character.name | uppercase}}
+    </mat-list-item>
+  </mat-nav-list> -->
