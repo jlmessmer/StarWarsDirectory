@@ -1,0 +1,7 @@
+<h2>Cast of Characters</h2>
+<ul class="characters">
+  <li *ngFor="let character of characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
+    {{character.name}}
+  </li>
+</ul>
+<app-character-detail [character]="selectedCharacter"></app-character-detail>
