@@ -1,13 +1,36 @@
-<h2>Cast of Characters</h2>
-  <mat-grid-list cols="3" rowHeight="3:4">
-    <mat-grid-tile 
-      *ngFor="let character of characters"
-      [colspan]=1
-      [rowspan]=1>
-      <app-character-detail [character]="character"></app-character-detail>
-    </mat-grid-tile>
-  </mat-grid-list>
-
+<div class="characters-grid">
+    <mat-sidenav-container class="filters">
+        <mat-sidenav mode="side" opened>
+            <h3 mat-subheader>Filters</h3>
+            <mat-selection-list #planets>
+                <h3 mat-subheader>Planets</h3>
+                <mat-list-option value="Tatooine">Tatooine</mat-list-option>
+                <mat-list-option value="Alderaan">Alderaan</mat-list-option>
+                <mat-list-option value="Stewjon">Stewjon</mat-list-option>
+            </mat-selection-list>
+            <mat-divider></mat-divider>
+            <mat-selection-list #genders>
+                <h3 mat-subheader>Genders</h3>
+                <mat-list-option value="male">Male</mat-list-option>
+                <mat-list-option value="female">Female</mat-list-option>
+                <mat-list-option value="n/a">N/A</mat-list-option>
+            </mat-selection-list>
+            <mat-divider></mat-divider>
+            <button mat-raised-button (click)="filter(planets, genders)">FILTER</button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <h1>Cast of Characters</h1>
+          <mat-grid-list cols="3" rowHeight="9:16" gutterSize="1em">
+            <mat-grid-tile 
+              *ngFor="let character of characters"
+              [colspan]=1
+              [rowspan]=1>
+                <app-character-detail [character]="character" class="{{character.homeworld}} {{character.gender}}"></app-character-detail>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-sidenav-content>
+    </mat-sidenav-container>  
+</div>
   <!-- <mat-nav-list class="characters">
     <mat-list-item *ngFor="let character of characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
       {{character.name | uppercase}}

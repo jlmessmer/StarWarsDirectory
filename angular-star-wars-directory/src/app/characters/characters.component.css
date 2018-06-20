@@ -1,3 +1,7 @@
+    .characters-grid{
+      margin: 1em
+    }
+    
     /* HeroesComponent's private CSS styles */
     /* .selected {
         background-color: #CFD8DC !important;
