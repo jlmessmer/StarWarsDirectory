@@ -1,6 +1,15 @@
     .characters-grid{
       margin: 1em
     }
+
+    h1 {
+      margin-left: 1em
+    }
+
+    h3.subtitle {
+      margin-left: 2em;
+      /*color: #3f3f3f*/
+    }
     
     /* HeroesComponent's private CSS styles */
     /* .selected {

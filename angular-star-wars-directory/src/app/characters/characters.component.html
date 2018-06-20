@@ -7,6 +7,7 @@
                 <mat-list-option value="Tatooine">Tatooine</mat-list-option>
                 <mat-list-option value="Alderaan">Alderaan</mat-list-option>
                 <mat-list-option value="Stewjon">Stewjon</mat-list-option>
+                <mat-list-option value="Naboo">Naboo</mat-list-option>
             </mat-selection-list>
             <mat-divider></mat-divider>
             <mat-selection-list #genders>
@@ -19,15 +20,18 @@
             <button mat-raised-button (click)="filter(planets, genders)">FILTER</button>
         </mat-sidenav>
         <mat-sidenav-content>
-          <h1>Cast of Characters</h1>
-          <mat-grid-list cols="3" rowHeight="9:16" gutterSize="1em">
-            <mat-grid-tile 
-              *ngFor="let character of characters"
-              [colspan]=1
-              [rowspan]=1>
-                <app-character-detail [character]="character" class="{{character.homeworld}} {{character.gender}}"></app-character-detail>
-            </mat-grid-tile>
-          </mat-grid-list>
+          <section class='mat-typography'>
+            <h1>Cast of Characters</h1>
+            <h3 class='subtitle'>Use this page to filter characters based on their attributes</h3>
+            <mat-grid-list cols="3" rowHeight="9:16" gutterSize="1em">
+              <mat-grid-tile 
+                *ngFor="let character of characters"
+                [colspan]=1
+                [rowspan]=1>
+                  <app-character-detail [character]="character" class="{{character.homeworld}} {{character.gender}}"></app-character-detail>
+              </mat-grid-tile>
+            </mat-grid-list>    
+          </section>
         </mat-sidenav-content>
     </mat-sidenav-container>  
 </div>

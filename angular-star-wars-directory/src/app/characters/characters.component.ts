@@ -34,16 +34,26 @@ export class CharactersComponent implements OnInit {
     let selectedGenders = genders.selectedOptions._selection;
     selectedGenders = Array.from(selectedGenders);
     selectedGenders = selectedGenders.map(item => item['value']);
+    let classes = '.';
+
     if(selectedPlanets.length <= 0 && selectedGenders.length <= 0){
       $('app-character-detail').slideDown();
-    } else {
-      let classes = '.';
-      for (let planet of selectedPlanets){
-        for (let gender of selectedGenders){
-          classes += planet + '.' + gender + ', .'
-        }
+    } else if (selectedPlanets.length > 0 && selectedGenders.length <= 0) {
+      for (let planet of selectedPlanets) {
+        classes += planet + ', .'
       }
+    } else if (selectedPlanets.length <= 0 && selectedGenders.length > 0) {
+      for (let gender of selectedGenders) {
+        classes += gender.replace('/', '\\/') + ', .'
+      }
+    } else {
+      for (let planet of selectedPlanets){
+          for (let gender of selectedGenders){
+            classes += planet + '.' + gender.replace('/', '\\/') + ', .'
+          }  
+        }
       classes = classes.slice(0, -3)
+      console.log(classes)
       $('app-character-detail').slideUp();
       $(classes).slideDown()
     }
