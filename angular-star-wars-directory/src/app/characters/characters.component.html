@@ -1,6 +1,11 @@
 <div class="characters-grid">
-    <mat-sidenav-container class="filters">
-        <mat-sidenav mode="side" opened>
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="star-wars-directory">Star Wars Directory</h1>
+    </mat-toolbar>    
+    <mat-sidenav-container class="filters" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
             <h3 mat-subheader>Filters</h3>
             <mat-selection-list #planets>
                 <h3 mat-subheader>Planets</h3>
